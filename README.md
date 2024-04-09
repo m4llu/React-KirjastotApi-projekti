@@ -13,4 +13,5 @@ Projekti on toteutettu käyttäen seuraavia teknologioita:
 - React: JavaScript-kirjasto käyttöliittymien rakentamiseen
 - KirjastotAPI: Rajapinta kirjastojen tietojen hallintaan
 - README tehty GitHub Copilotilla
+
 ![React-logo](logo.svg)
