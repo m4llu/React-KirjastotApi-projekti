@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -41,15 +42,25 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  height: 100%;
 }
 
+
+  footer {
+    bottom: 0;
+    padding: 20px 0 20px 0;
+    background-color: #f2f2f2;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+  }
+  
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+  flex-grow: 1;
 }
 
 .header {
@@ -159,6 +170,43 @@ input:focus {
 .google-logo {
   width: 70%;
 }
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.dark-mode body {
+  background-color: #1f1f1f; /* Background color for dark mode */
+  color: #ffffff; /* Text color for dark mode */
+}
+
+.dark-mode .search-input {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark-mode .search-button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.dark-mode .error-message {
+  color: #ff5c5c;
+}
+
+.dark-mode .library-item {
+  border-color: #333333;
+  box-shadow: 0 4px 6px rgba(32,33,36,.28);
+}
+
+.dark-mode .library-details {
+  color: #ffffff;
+}
+
+/* Add more dark mode styles as needed */
+
 /* Responsive Styles */
 
 @media (max-width: 768px) {
