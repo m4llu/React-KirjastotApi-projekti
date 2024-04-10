@@ -15,6 +15,7 @@ function App() {
       return;
     }
     try {
+      // searches with both city and name
       const citySearchUrl = `https://api.kirjastot.fi/v4/library?city.name=${encodeURIComponent(searchTerm)}`;
       const nameSearchUrl = `https://api.kirjastot.fi/v4/library?name=${encodeURIComponent(searchTerm)}`;
   
