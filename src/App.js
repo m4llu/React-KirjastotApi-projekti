@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Library from './components/library';
 import logo from './logo.png';
+import logoWhite from './logoWhite.png';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,7 +50,7 @@ function App() {
   return (
     <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}> {/* Apply dark mode class */}
       <header className="header">
-        <img src={logo} className='google-logo' alt="Logo"></img>
+      <img src={isDarkMode ? logoWhite : logo} className='google-logo' alt="Logo"></img> {/* Conditional rendering of logo */}
         <div className="search-container">
           <input
             type="text"
