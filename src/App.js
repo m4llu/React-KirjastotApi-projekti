@@ -9,7 +9,7 @@ function App() {
   const [error, setError] = useState(null);
 
   const handleSearch = async () => {
-
+    setError('');
     if (!searchTerm) {
       setError('Kirjoita hakusana.');
       return;
@@ -50,16 +50,16 @@ function App() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="search-button" onClick={handleSearch}>Search</button>
+          <button className="search-button" onClick={handleSearch}>Hae</button>
         </div>
       </header>
       <div className="library-list">
+      {error && <p className="error-message">{error}</p>}
         {libraries.length > 0 ? (
           libraries.map(library => <Library key={library.id} library={library} />)
         ) : (
           <p></p>
         )}
-        {error && <p className="error-message">{error}</p>}
       </div>
     </div>
   );
