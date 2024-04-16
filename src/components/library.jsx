@@ -48,7 +48,9 @@ const Library = ({ library }) => {
   return (
     <div className="library-item">
       <div className="library-image-container">
-        <img src={library.coverPhoto.large.url} alt="Library" className="library-image" />
+        {library.coverPhoto && library.coverPhoto.large && (
+          <img src={library.coverPhoto.large.url} alt="Library" className="library-image" />
+        )}
       </div>
       <div className="library-details">
         <h2>{library.name}</h2>

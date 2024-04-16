@@ -53,7 +53,7 @@ body, html {
   margin-top: 50px;
 }
 .void {
-  flex-grow: 1; /* Fill remaining space between content and footer */
+  flex-grow: 1; 
 }
 .app {
   display: flex;
@@ -179,8 +179,8 @@ input:focus {
 }
 
 .dark-mode body {
-  background-color: #1f1f1f; /* Background color for dark mode */
-  color: #ffffff; /* Text color for dark mode */
+  background-color: #1f1f1f; 
+  color: #ffffff; 
 }
 
 .dark-mode .search-input {
@@ -227,10 +227,6 @@ input:focus {
   color: #ffffff;
   text-shadow: 1px 0px 3px #0000005e;
 }
-
-/* Add more dark mode styles as needed */
-
-/* Responsive Styles */
 
 @media (max-width: 768px) {
 

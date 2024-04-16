@@ -8,7 +8,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [libraries, setLibraries] = useState([]);
   const [error, setError] = useState(null);
-  const [isDarkMode, setIsDarkMode] = useState(false); // Track dark mode state
+  const [isDarkMode, setIsDarkMode] = useState(false); 
 
   useEffect(() => {
     const root = document.documentElement;
@@ -54,9 +54,9 @@ function App() {
   };
 
   return (
-    <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}> {/* Apply dark mode class */}
+    <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}> 
       <header className="header">
-      <img src={isDarkMode ? logoWhite : logo} className='google-logo' alt="Logo"></img> {/* Conditional rendering of logo */}
+      <img src={isDarkMode ? logoWhite : logo} className='google-logo' alt="Logo"></img> 
         <div className="search-container">
           <input
             type="text"
@@ -70,14 +70,13 @@ function App() {
         </div>
         </header>
   
-      <div className="library-list">
-        {error && <p className="error-message">{error}</p>}
-        {libraries.length > 0 ? (
-          libraries.map(library => <Library key={library.id} library={library} />)
-        ) : (
-          <p></p>
-        )}
-      </div>
+        <div className="library-list">
+          {error && <p className="error-message">{error}</p>}
+          {libraries.length > 0 ? (libraries.map((library, index) => (<Library key={`${library.id}-${index}`} library={library} />))
+          ) : (
+          <p>Kirjastoja ei löytynyt.</p>
+          )}
+        </div>
       <div className="void"></div>
           <footer className="footer">
           <button className="dark-mode-toggle" onClick={() => setIsDarkMode(!isDarkMode)}>
