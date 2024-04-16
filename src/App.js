@@ -103,7 +103,7 @@ function App() {
           <button className="dark-mode-toggle" onClick={() => setIsDarkMode(!isDarkMode)}>
           {isDarkMode ? 'Light Mode' : 'Dark Mode'}
           </button>
-          <p>Powered by Google</p>
+          <p>Powered by KirjastotAPI</p>
         </footer>
     </div>
   );
