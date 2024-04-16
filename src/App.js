@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Library from './components/library';
 import logo from './logo.png';
@@ -9,6 +9,12 @@ function App() {
   const [libraries, setLibraries] = useState([]);
   const [error, setError] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false); // Track dark mode state
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty('--background-color-light', isDarkMode ? '#1f1f1f' : '#ffffff');
+    root.style.setProperty('--text-color-light', isDarkMode ? '#ffffff' : '#000000');
+  }, [isDarkMode]);
 
   const handleSearch = async () => {
     setError('');
@@ -72,9 +78,10 @@ function App() {
           <p></p>
         )}
       </div>
+      <div className="void"></div>
           <footer className="footer">
           <button className="dark-mode-toggle" onClick={() => setIsDarkMode(!isDarkMode)}>
-            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
           </button>
           <p>Powered by Google</p>
         </footer>

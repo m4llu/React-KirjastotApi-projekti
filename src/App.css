@@ -45,21 +45,22 @@ body, html {
 }
 
 
-  footer {
-    bottom: 0;
-    padding: 20px 0 20px 0;
-    background-color: #f2f2f2;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-  }
-  
+.footer {
+  padding: 20px 0;
+  background-color: #f2f2f2;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.void {
+  flex-grow: 1; /* Fill remaining space between content and footer */
+}
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100vh;
   flex-grow: 1;
 }
 
@@ -196,6 +197,10 @@ input:focus {
   color: #ff5c5c;
 }
 
+.dark-mode footer {
+  background-color: #363232;
+}
+
 .dark-mode .library-item {
   border-color: #333333;
   box-shadow: 0 4px 6px rgba(32,33,36,.28);
@@ -205,15 +210,30 @@ input:focus {
   color: #ffffff;
 }
 
+.dark-mode-toggle {
+  background-color: #bababb31;
+  color: #666666;
+  border-radius: 25px;
+  padding: 7px 15px;
+  border: none;
+  transition: 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #bababb65;
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #ffffff;
+  text-shadow: 1px 0px 3px #0000005e;
+}
+
 /* Add more dark mode styles as needed */
 
 /* Responsive Styles */
 
 @media (max-width: 768px) {
-  .header {
-    width: 80%;
-  }
-  
+
   .search-container {
     width: 80%;
   }
