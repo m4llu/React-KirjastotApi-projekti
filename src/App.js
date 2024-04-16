@@ -36,15 +36,36 @@ function App() {
       const citySearchData = await citySearchResponse.json();
       const nameSearchData = await nameSearchResponse.json();
 
-      const combinedLibraries = [...citySearchData.items, ...nameSearchData.items];
-
-      setLibraries(combinedLibraries);
+      const uniqueLibraries = filterDuplicateLibraries(citySearchData.items, nameSearchData.items)
+      setLibraries(uniqueLibraries);
       setError(null);
     } catch (error) {
       console.error('Error fetching libraries:', error);
       setError('Error fetching libraries. Please try again later.');
       setLibraries([]);
     }
+  };
+
+  const filterDuplicateLibraries = (cityLibraries, nameLibraries) => {
+    const uniqueLibraries = [];
+  
+    cityLibraries.forEach(library => {
+      // tarkistaa onko kirjasto jo listassa uniqueLibraries
+      if (!uniqueLibraries.some(item => item.id === library.id)) {
+        // jos ei ole, lisätään se
+        uniqueLibraries.push(library);
+      }
+    });
+  
+    // tehdään sama asia myös nimihaulle
+    nameLibraries.forEach(library => {
+      if (!uniqueLibraries.some(item => item.id === library.id)) {
+        uniqueLibraries.push(library);
+      }
+    });
+  
+    // palautetaan uniikit kirjastot
+    return uniqueLibraries;
   };
 
   const handleKeyPress = (e) => {
