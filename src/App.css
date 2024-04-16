@@ -69,7 +69,7 @@ body, html {
   margin-bottom: 20px;
   width: 60%;
   text-align: center;
-  width: 60%;
+  width: 40%;
   min-height: 200px;
 }
 
@@ -244,6 +244,10 @@ input:focus {
   .search-input {
     padding: 8px;
     font-size: small;
+  }
+
+  header {
+    width: 55%;
   }
 }
 
