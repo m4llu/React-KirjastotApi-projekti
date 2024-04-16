@@ -69,7 +69,8 @@ body, html {
   margin-bottom: 20px;
   width: 60%;
   text-align: center;
-  width: 40%;
+  width: 60%;
+  min-height: 200px;
 }
 
 .header h1 {
@@ -82,7 +83,7 @@ body, html {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: -7px;
 }
 
 .search-input {
@@ -91,7 +92,7 @@ body, html {
   border: 1px solid #dfe1e5;
   border-radius: 24px;
   padding: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 16px;
 }
 
@@ -169,7 +170,8 @@ input:focus {
 }
 
 .google-logo {
-  width: 70%;
+  width: 90%;
+  margin-bottom: 10px;
 }
 
 /* Dark Mode Styles */
@@ -229,12 +231,53 @@ input:focus {
 }
 
 @media (max-width: 768px) {
-
-  .search-container {
-    width: 80%;
-  }
   
   .library-list {
     width: 80%;
+  }
+
+  .search-button {
+    padding: 10px 15px;
+    font-size: small;
+  }
+
+  .search-input {
+    padding: 8px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 580px) {
+  
+  .library-item {
+    max-width: 90%;
+  }
+
+  .search-button {
+    padding: 8px 12px;
+    font-size: smaller;
+  }
+
+  .search-input {
+    padding: 7px;
+    font-size: smaller;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  
+  .library-item {
+    max-width: 90%;
+  }
+
+  .search-button {
+    padding: 8px 12px;
+    font-size: x-small;
+  }
+
+  .search-input {
+    padding: 7px;
+    font-size: x-small;
+    width: 100%;
   }
 }
