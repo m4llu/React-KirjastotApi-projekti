@@ -246,8 +246,8 @@ input:focus {
     font-size: small;
   }
 
-  header {
-    width: 55%;
+  .header {
+    width: 70%;
   }
 }
 
